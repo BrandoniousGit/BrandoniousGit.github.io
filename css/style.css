@@ -1,7 +1,7 @@
 body
 {
 	margin: 0px;
-	background: linear-gradient(to bottom, #3E6FDE 10%, #3EC3DE 50%);
+	background-color:#BD91E3;
 }
 
 
@@ -58,12 +58,19 @@ body
 #menu
 {
 	text-align: center;
-	width: 50%;
+	width: 100%;
 	display: none;
+	font-family: HP Simplified, sans-serif;
+}
+
+#contact
+{
+	text-align: center;
+	font-size:40px;
 	font-family: HP Simplified, sans-serif;
 }
 
 #body_style
 {
-	background-color:red;
+	background-color:#BD91E3;
 }
