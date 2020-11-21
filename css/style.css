@@ -1,0 +1,69 @@
+body
+{
+	margin: 0px;
+	background: linear-gradient(to bottom, #3E6FDE 10%, #3EC3DE 50%);
+}
+
+
+#header
+{
+	font-size:30pt;
+	font-family:HP Simplified, sans-serif;
+	color:black;
+	background-color:#ADC2FA;
+	height:50pt;
+	text-align:center;
+	border-bottom: 3px solid #000000;
+}
+
+#footer
+{
+	background-color:#ADC2FA;
+	position:fixed;
+	text-align:center;
+	font-family:HP Simplified, sans-serif;
+	bottom: 0;
+	left: 0;
+	height: 60pt;
+	font-size:20pt;
+	width: 100%;
+	border-top: 3px solid #000000;
+}
+
+.banner_links a:visited
+{
+	color:black;
+	font-family:HP Simplified;
+}
+
+.banner_links a:hover
+{
+	color:black;
+	font-family:HP Simplified;
+}
+
+.banner_links a:link
+{
+	color:black;
+	font-family:HP Simplified;
+}
+
+#links
+{
+	font-size:15pt;
+	width: 50%;
+	text-align:center;
+}
+
+#menu
+{
+	text-align: center;
+	width: 50%;
+	display: none;
+	font-family: HP Simplified, sans-serif;
+}
+
+#body_style
+{
+	background-color:red;
+}

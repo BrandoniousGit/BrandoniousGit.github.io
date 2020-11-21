@@ -1,0 +1,66 @@
+<html>
+
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+		<title>
+		Project Page
+		</title>
+	
+	</head>
+	
+<!-- This is the Header -->
+
+	<div id="header">
+		<div style="height: 20px; float: right" class="banner_links" id="links">
+		<br>
+			<a onclick="showMenu()" href="#">Menu 2</a>
+		</div>
+		<div style="height: 20px;" class="banner_links" id="links">
+		<br>
+			<a onclick="showMenu()" href="#">Menu</a>
+		</div> 														<!-- Menu -->
+	</div>
+	
+	<div class="banner_links" id="menu">
+		<div>
+		<br>
+			<div style="width: 33%;  float:left">
+				<a href="index.html">Home</a>
+			</div>
+			<div style="width: 33%;  float:left">
+				<a href="project.html">Project</a>
+			</div>
+			<div style="width: 33%;  float:left">
+				<a href="project.html">Project Link</a>
+			</div>
+		</div>
+	</div>
+	
+<script>
+
+function showMenu()
+{
+alert("Hello");
+	let div = document.getElementById("menu");
+	if (div.style.display === "none") {
+		div.style.display = "block";
+		} 
+	else{
+		div.style.display = "none";
+		}
+}
+
+</script>
+
+	<body id="body_style">
+		
+	</body>
+
+
+	<div id="footer">
+	<br>
+		This is the footer
+	</div>
+	
+</html>
