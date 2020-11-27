@@ -13,7 +13,7 @@ body
 	background-color:#ADC2FA;
 	height:50pt;
 	text-align:center;
-	border-bottom: 3px solid #000000;
+	border-bottom: 5px solid #000000;
 }
 
 #footer
@@ -27,7 +27,7 @@ body
 	height: 60pt;
 	font-size:20pt;
 	width: 100%;
-	border-top: 3px solid #000000;
+	border-top: 5px solid #000000;
 }
 
 .banner_links a:visited
@@ -76,3 +76,4 @@ body
 {
 	background-color:#BD91E3;
 }
+
