@@ -77,3 +77,16 @@ body
 	background-color:#BD91E3;
 }
 
+.FadeDivs
+{
+	margin-top: 15%;
+	margin-left: 10%;
+	position:fixed;
+	font-size: 40px;
+	text-align: center;
+	font-family: HP Simplified;
+	float:left;
+	width:80px;
+	height:80px;
+	display:none;
+}

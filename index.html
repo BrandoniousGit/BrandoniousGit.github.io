@@ -22,31 +22,45 @@
 		</div> 														<!-- Menu -->
 	</div>
 	
-	
-	<div class="banner_links">
-		<br>
-		<div id="menu">
-			<div style="width: 33.3%;  float:left">
-				<a href="index.html">Home</a>
+	<body>
+		<div class="banner_links">
+			<br>
+			<div id="menu">
+				<div style="width: 33.3%;  float:left">   <!-- Link menu -->
+					<a href="index.html">Home</a>
+				</div>
+				<div style="width: 33.3%;  float:left">
+					<a href="project.html">Project</a>
+				</div>
+				<div style="width: 33.3%;  float:left">
+					<a href="canvas.html">Canvas</a>
+				</div>
 			</div>
-			<div style="width: 33.3%;  float:left">
-				<a href="project.html">Project</a>
+			
+			<div id="contact" style="float:right; width:49.9%">	<!-- Title on the right -->
+				Home page
 			</div>
-			<div style="width: 33.3%;  float:left">
-				<a href="canvas.html">Canvas</a>
+			
+			<div class="FadeDivs" id="Fade" onload="fadeThing"> <!-- Fading stuff -->
+				Unity
 			</div>
+			<div class="FadeDivs" id="Fade2">
+				Precision
+			</div>
+			<div class="FadeDivs" id="Fade3">
+				Perfection
+			</div>
+			
 		</div>
-		<div id="contact" style="float:right; width:49.9%">
-			Home page
-		</div>
-	</div>
-	
+	</body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-var x = 3000;
 
 $(document).ready(function fadeThing(){
-	$("#test").fadeIn(x);
+	$("#Fade").fadeToggle(1500).fadeToggle(1500)
+	$("#Fade2").delay(1750).fadeToggle(1500).fadeToggle(1500)
+	$("#Fade3").delay(3500).fadeToggle(1500).fadeToggle(1500)
 });
 
 function showMenu()
@@ -62,13 +76,7 @@ function showMenu()
 
 </script>
 
-	<body id="body_style">
-		
-	</body>
-	
-	<div id="test" onload="fadeThing" style="width:80px;height:80px;display:none;background-color:red;">
-		Dabble
-	</div>
+
 
 
 	<div id="footer">
