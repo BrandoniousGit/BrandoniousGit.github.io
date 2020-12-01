@@ -33,7 +33,7 @@
 					<a href="project.html">Project</a>
 				</div>
 				<div style="width: 33.3%;  float:left">
-					<a href="project.html">Project Link</a>
+					<a href="canvas.html">Canvas</a>
 				</div>
 			</div>
 			<div id="contact" style="float:right; width:49.9%">
@@ -54,13 +54,14 @@
 <script>
 
 var x = 10; //10 and 380
-var y = 20;  //This is the code for pong
+var y = Math.floor((Math.random() * 300) + 1);  //This is the code for pong
 var flipx = 0;
 var flipy = 0;
 var rightPaddley = 330;
 var leftPaddley = 13;
 var game = 0;
 var keys = [];
+var bonks = 0;
 
 // --------------------------Main function-------------------------------
 
@@ -114,9 +115,34 @@ function tick(ctx){
 	window.requestAnimationFrame(function(){tick(ctx);});
 }
 
+// ----------------------------Sound functions-----------------------------
+
+function playsoundPaddle()
+{
+  var paddleHit = new Audio();
+  paddleHit.src = "sounds/paddlehit.ogg";
+  paddleHit.play();
+}
+
+function playsoundWall()
+{
+  var wallHit = new Audio();
+  wallHit.src = "sounds/wallhit.ogg";
+  wallHit.play();
+}
+
+function winSound()
+{
+  var win = new Audio();
+  win.src = "sounds/win.ogg";
+  win.play();
+}
+
 // ----------------------------Paddles Moving-----------------------------
 
 function draw(ctx) {
+	
+	var random = Math.floor((Math.random() * 2) + 1);
 	
 	ctx.fillStyle = "black";
 	ctx.fillRect(0,0,400,400);
@@ -130,7 +156,7 @@ function draw(ctx) {
 	ctx.fillStyle = "gray";
 	ctx.fillRect(x,y,10,10);
 	
-	if (rightPaddley > 340) {
+	if (rightPaddley > 340) {                    // Keeps paddles on the screen
 				rightPaddley = 340;
 			} else if (rightPaddley < 0) {
 				rightPaddley = 0;
@@ -142,12 +168,26 @@ function draw(ctx) {
 				leftPaddley = 0;
 			}
 	
-	if (flipx == 0) {
+	
+	
+	if (flipx == 0) {                                                  // Tests for ball hitting paddle and chaning direction
 		if (x <= 376) {
 			x++;
-			
+			if (bonks > 8) {
+				x = x + 0.5
+			}
+			if (bonks > 20) {
+				x = x + 0.5
+			}
 		} else if (y >= rightPaddley-5  && y <= rightPaddley + 65) {
 			flipx = 1;
+			if (random == 1 && flipy == 0) {
+				flipy = 1;
+			} else if (random == 1 && flipy == 1) {
+				flipy = 0;
+			}
+			playsoundPaddle();
+			bonks++;
 		} else {
 			game = 1;
 		}
@@ -156,19 +196,34 @@ function draw(ctx) {
 	else if (flipx == 1) {
 		if (x >= 14) {
 			x--;
-				
+			if (bonks > 8) {
+				x = x - 0.5
+			}
+			if (bonks > 20) {
+				x = x - 0.5
+			}
 		} else if (y >= leftPaddley-5 && y <= leftPaddley + 65) {
 			flipx = 0;
+			if (random == 1 && flipy == 0) {
+				flipy = 1;
+			} else if (random == 1 && flipy == 1) {
+				flipy = 0;
+			}
+			playsoundPaddle();
+			bonks++;
 		} else {
 			game = 2;
 		}
 	}
+	
+	
 	
 	if (flipy == 0) {             // Test for hitting roof, if true then change direction
 		if (y <= 390) {
 			y++;
 		} else {
 		flipy = 1;
+		playsoundWall()
 		}
 	}
 	else if (flipy == 1) {
@@ -176,11 +231,16 @@ function draw(ctx) {
 			y--;
 		} else {
 		flipy = 0;
+		playsoundWall()
 		}
 	}
 	
 	if (game == 0) {
 		window.requestAnimationFrame(function(){draw(ctx);});
+	} else if (game == 1) {
+		winSound();
+	} else if (game == 2) {
+		winSound();
 	}
 	
 	
