@@ -11,40 +11,186 @@
 	
 <!-- This is the Header -->
 
-	<div id="header">
-		<div style="height: 10%; float: right" class="banner_links" id="links">
-		<br>
-			<a href="contact.html">Contact Me</a>
-		</div>
-		<div style="height: 10%;" class="banner_links" id="links">
-		<br>
-			<a onclick="showMenu()" href="#">Menu</a>
-		</div> 														<!-- Menu -->
-	</div>
-	
-	
-	<div class="banner_links">
-		<br>
-		<div id="menu">
-			<div style="width: 33.3%;  float:left">
-				<a href="index.html">Home</a>
+		<div id="header">
+			<div style="height: 10%; float: right" class="banner_links" id="links">
+			<br>
+				<a href="contact.html">Contact Me</a>
 			</div>
-			<div style="width: 33.3%;  float:left">
-				<a href="project.html">Project</a>
-			</div>
-			<div style="width: 33.3%;  float:left">
-				<a href="project.html">Project Link</a>
-			</div>
+			<div style="height: 10%;" class="banner_links" id="links">
+			<br>
+				<a onclick="showMenu()" href="#">Menu</a>
+			</div> 														<!-- Menu -->
 		</div>
-		<div id="contact" style="float:right; width:49.9%">
-			Canvas
-		</div>
-	</div>
 	
+	<body>	
+		<div class="banner_links">
+			<br>
+			<div id="menu">
+				<div style="width: 33.3%;  float:left">
+					<a href="index.html">Home</a>
+				</div>
+				<div style="width: 33.3%;  float:left">
+					<a href="project.html">Project</a>
+				</div>
+				<div style="width: 33.3%;  float:left">
+					<a href="project.html">Project Link</a>
+				</div>
+			</div>
+			<div id="contact" style="float:right; width:49.9%">
+				Canvas
+			</div>
+			
+			<div id="holdCanvas">
+				<button type="button" id="pongButton" onclick="mainPong()" style="display:block"> Press to Start </button>
+				<canvas id="myCanvas">
+		
+				</canvas>
+			</div>
+			
+		</div>
+	</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
-function showMenu()
+var x = 10; //10 and 380
+var y = 20;  //This is the code for pong
+var flipx = 0;
+var flipy = 0;
+var rightPaddley = 330;
+var leftPaddley = 13;
+var game = 0;
+var keys = [];
+
+// --------------------------Main function-------------------------------
+
+function mainPong() {
+	
+	var c = document.getElementById("myCanvas");
+	c.width = 400;
+	c.height = 400;
+	var ctx = c.getContext("2d");
+	tick(ctx);
+	draw(ctx);
+	
+}
+
+// --------------------------------Keydown and Keyup Events-------------------------
+
+function keydown(event)
 {
+  keys[event.key] = true;
+}
+
+function keyup(event)
+{
+  keys[event.key] = false;
+}
+
+function tick(ctx){
+	moving = false;
+	
+	if(keys["w"])
+	{
+		leftPaddley = leftPaddley - 2;
+		moving = true;
+	}
+	else if(keys["s"])
+	{
+		leftPaddley = leftPaddley + 2;
+		moving = true;
+	}
+	
+	if(keys["ArrowUp"])
+	{
+		rightPaddley = rightPaddley - 2;
+		moving = true;
+	}
+	else if(keys["ArrowDown"])
+	{
+		rightPaddley = rightPaddley + 2;
+		moving = true;
+	}
+	window.requestAnimationFrame(function(){tick(ctx);});
+}
+
+// ----------------------------Paddles Moving-----------------------------
+
+function draw(ctx) {
+	
+	ctx.fillStyle = "black";
+	ctx.fillRect(0,0,400,400);
+	
+	ctx.fillStyle = "white";
+	ctx.fillRect(387,rightPaddley,10,60);
+	
+	ctx.fillStyle = "white";
+	ctx.fillRect(3,leftPaddley,10,60);
+	
+	ctx.fillStyle = "gray";
+	ctx.fillRect(x,y,10,10);
+	
+	if (rightPaddley > 340) {
+				rightPaddley = 340;
+			} else if (rightPaddley < 0) {
+				rightPaddley = 0;
+			}
+			
+	if (leftPaddley > 340) {
+				leftPaddley = 340;
+			} else if (leftPaddley < 0) {
+				leftPaddley = 0;
+			}
+	
+	if (flipx == 0) {
+		if (x <= 376) {
+			x++;
+			
+		} else if (y >= rightPaddley-5  && y <= rightPaddley + 65) {
+			flipx = 1;
+		} else {
+			game = 1;
+		}
+	}
+	
+	else if (flipx == 1) {
+		if (x >= 14) {
+			x--;
+				
+		} else if (y >= leftPaddley-5 && y <= leftPaddley + 65) {
+			flipx = 0;
+		} else {
+			game = 2;
+		}
+	}
+	
+	if (flipy == 0) {             // Test for hitting roof, if true then change direction
+		if (y <= 390) {
+			y++;
+		} else {
+		flipy = 1;
+		}
+	}
+	else if (flipy == 1) {
+		if (y >= 0) {
+			y--;
+		} else {
+		flipy = 0;
+		}
+	}
+	
+	if (game == 0) {
+		window.requestAnimationFrame(function(){draw(ctx);});
+	}
+	
+	
+	window.addEventListener("keydown", keydown);
+	window.addEventListener("keyup", keyup);
+}
+
+// ---------------------------------------------------------------
+
+function showMenu() {
 	let div = document.getElementById("menu");
 	if (div.style.display == "" || div.style.display == "none") {
 		div.style.display = "block";
@@ -55,10 +201,6 @@ function showMenu()
 }
 
 </script>
-
-	<body id="body_style">
-		
-	</body>
 
 
 	<div id="footer">

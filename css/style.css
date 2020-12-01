@@ -90,3 +90,18 @@ body
 	height:80px;
 	display:none;
 }
+
+#holdCanvas
+{
+	position:fixed;
+	margin-top:10%;
+	margin-left:5%;
+}
+
+#myCanvas
+{
+	width:400px;
+	height:400px;
+	border:3px solid #ffffff;
+	background-color:black;
+}
