@@ -42,11 +42,10 @@
 			
 			<div id="holdCanvas">
 				<button type="button" id="pongButton" onclick="mainPong()" style="display:block"> Press to Start </button>
-				<canvas id="myCanvas">
-		
-				</canvas>
+				<canvas id="myCanvas"></canvas>
+				<div id="winText1" style="display:none">Player 1 Wins!</div>
+				<div id="winText2" style="display:none">Player 2 Wins!</div>
 			</div>
-			
 		</div>
 	</body>
 
@@ -59,9 +58,20 @@ var flipx = 0;
 var flipy = 0;
 var rightPaddley = 330;
 var leftPaddley = 13;
-var game = 0;
+var game = 3;
 var keys = [];
 var bonks = 0;
+var rounds = 0;
+
+function player1Win() {
+	let win1 = document.getElementById("winText1");
+	win1.style.display = "block";
+}
+
+function player2Win() {
+	let win2 = document.getElementById("winText2");
+	win2.style.display = "block";
+}
 
 // --------------------------Main function-------------------------------
 
@@ -71,8 +81,12 @@ function mainPong() {
 	c.width = 400;
 	c.height = 400;
 	var ctx = c.getContext("2d");
-	tick(ctx);
+	resetGame();
+	if (rounds < 1) {
+		tick(ctx);
+	}
 	draw(ctx);
+	rounds++;
 	
 }
 
@@ -138,6 +152,27 @@ function winSound()
   win.play();
 }
 
+// ----------------------------Reset Function-----------------------------
+
+function resetGame()
+{
+	x = 10; //10 and 380
+	y = Math.floor((Math.random() * 300) + 1);  //This is the code for pong
+	flipx = 0;
+	flipy = 0;
+	rightPaddley = 330;
+	leftPaddley = 13;
+	game = 0;
+	bonks = 0;
+	keys = [];
+	
+	let reset1 = document.getElementById("winText1");
+	reset1.style.display = "none";
+
+	let reset2 = document.getElementById("winText2");
+	reset2.style.display = "none";
+}
+
 // ----------------------------Paddles Moving-----------------------------
 
 function draw(ctx) {
@@ -179,7 +214,7 @@ function draw(ctx) {
 			if (bonks > 20) {
 				x = x + 0.5
 			}
-		} else if (y >= rightPaddley-5  && y <= rightPaddley + 65) {
+		} else if (y >= rightPaddley-10  && y <= rightPaddley + 65) {
 			flipx = 1;
 			if (random == 1 && flipy == 0) {
 				flipy = 1;
@@ -202,7 +237,7 @@ function draw(ctx) {
 			if (bonks > 20) {
 				x = x - 0.5
 			}
-		} else if (y >= leftPaddley-5 && y <= leftPaddley + 65) {
+		} else if (y >= leftPaddley-10 && y <= leftPaddley + 65) {
 			flipx = 0;
 			if (random == 1 && flipy == 0) {
 				flipy = 1;
@@ -239,8 +274,10 @@ function draw(ctx) {
 		window.requestAnimationFrame(function(){draw(ctx);});
 	} else if (game == 1) {
 		winSound();
+		player1Win();
 	} else if (game == 2) {
 		winSound();
+		player2Win();
 	}
 	
 	
