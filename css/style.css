@@ -119,3 +119,19 @@ body
 	font-family: HP Simplified;
 	font-size: 32px;
 }
+
+#controls1
+{
+	padding-top:15%;
+	padding-left:50%;
+	text-align: center;
+	font-family: HP Simplified;
+	font-size: 40px;
+}
+
+#controls2
+{
+	text-align: center;
+	font-family: HP Simplified;
+	font-size: 24px;
+}
