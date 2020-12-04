@@ -42,16 +42,16 @@
 			</div>
 			
 			<div class="FadeDivs" id="Fade" onload="fadeThing"> <!-- Fading stuff -->
-				Unity.
+				Brandon Batson
 			</div>
 			<div class="FadeDivs" id="Fade2">
-				Precision.
+				Website Design
 			</div>
 			<div class="FadeDivs" id="Fade3">
-				Perfection.
+				Everything
 			</div>
 			<div class="FadeDivs" id="Fade4">
-				This is a fade Test.
+				Boslaquisnad
 			</div>
 			
 		</div>
@@ -61,10 +61,14 @@
 <script>
 
 $(document).ready(function fadeThing(){
-	$("#Fade").fadeToggle(1500).fadeToggle(1500)
-	$("#Fade2").delay(1750).fadeToggle(1500).fadeToggle(1500)
-	$("#Fade3").delay(3500).fadeToggle(1500).fadeToggle(1500)
-	$("#Fade4").delay(5250).fadeToggle(1500).fadeToggle(1500)
+	
+	$("#Fade").fadeToggle(2000).fadeToggle(1000)
+	$("#Fade2").delay(3000).fadeToggle(2000).fadeToggle(1000)
+	$("#Fade3").delay(6000).fadeToggle(2000).fadeToggle(1000)
+	$("#Fade4").delay(9000).fadeToggle(2000).fadeToggle(1000)
+	
+	var timer = setTimeout(fadeThing, 12000);
+	
 });
 
 function showMenu()
@@ -79,9 +83,6 @@ function showMenu()
 }
 
 </script>
-
-
-
 
 	<div id="footer">
 	<br>

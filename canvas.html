@@ -48,8 +48,10 @@
 			</div>
 			<div id="controls1">
 				Controls
+				<p style="text-decoration:underline;">Player 1</p>
+				<div id="controls2">W + S | Left Paddle</div>
+				<p style="text-decoration:underline;">Player 2</p>
 				<div id="controls2">Up Arrow + Down Arrow | Right Paddle</div>
-				<div id="controls2">W + S | Right Paddle</div>
 			</div>
 		</div>
 	</body>
@@ -193,7 +195,7 @@ function draw(ctx) {
 	ctx.fillStyle = "white";
 	ctx.fillRect(3,leftPaddley,10,60);
 	
-	ctx.fillStyle = "gray";
+	ctx.fillStyle = "white";
 	ctx.fillRect(x,y,10,10);
 	
 	if (rightPaddley > 340) {                    // Keeps paddles on the screen

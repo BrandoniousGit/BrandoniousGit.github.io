@@ -86,8 +86,8 @@ body
 	text-align: center;
 	font-family: HP Simplified;
 	float:left;
-	width:80px;
-	height:80px;
+	width:500px;
+	height:200px;
 	display:none;
 }
 
@@ -95,7 +95,7 @@ body
 {
 	position:fixed;
 	margin-top:10%;
-	margin-left:5%;
+	margin-left:20%;
 }
 
 #myCanvas
@@ -122,8 +122,8 @@ body
 
 #controls1
 {
-	padding-top:15%;
-	padding-left:50%;
+	padding-top:11.5%;
+	padding-left:40%;
 	text-align: center;
 	font-family: HP Simplified;
 	font-size: 40px;
@@ -134,4 +134,53 @@ body
 	text-align: center;
 	font-family: HP Simplified;
 	font-size: 24px;
+}
+
+#contactForm
+{
+	position:absolute;
+	font-family: HP Simplified;
+	text-align:center;
+	width:200px;
+	height:300px;
+	margin-left:20%;
+	margin-top:10%
+}
+
+#myEmail
+{
+	text-align: center;
+	font-family: HP Simplified;
+	font-size: 18px;
+	position:absolute;
+	margin-left:20%;
+	margin-top:10%;
+}
+
+#myNumber
+{
+	text-align: center;
+	font-family: HP Simplified;
+	font-size: 18px;
+	position:absolute;
+	margin-left:20%;
+	margin-top:30%;
+}
+
+#myLocation
+{
+	text-align: center;
+	font-family: HP Simplified;
+	font-size: 18px;
+	position:absolute;
+	margin-left:20%;
+	margin-top:50%;
+}
+
+#images
+{
+	height:32px;
+	width:32px;
+	position:absolute;
+	float:left;
 }
