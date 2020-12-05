@@ -184,3 +184,28 @@ body
 	position:absolute;
 	float:left;
 }
+
+#video1
+{
+	width:35%;
+	height:40%;
+	border: 3px solid black;
+	margin-top:10%;
+	margin-left:10%;
+	position:fixed;
+}
+
+#video2
+{
+	width:35%;
+	height:40%;
+	border: 3px solid black;
+	position:fixed;
+	margin-left:55%;
+	margin-top:10%;
+}
+
+#holdVideo
+{
+	position:fixed;
+}
