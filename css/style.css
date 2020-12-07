@@ -1,6 +1,6 @@
 body
 {
-	margin: 0px;
+	margin:0px;
 	background-color:#BD91E3;
 }
 
@@ -22,12 +22,12 @@ body
 	position:fixed;
 	text-align:center;
 	font-family:HP Simplified, sans-serif;
-	bottom: 0;
-	left: 0;
-	height: 60pt;
-	font-size:20pt;
-	width: 100%;
-	border-top: 5px solid #000000;
+	bottom:0;
+	left:0;
+	height:30pt;
+	font-size:10pt;
+	width:100%;
+	border-top:5px solid #000000;
 }
 
 .banner_links a:visited
@@ -84,7 +84,7 @@ body
 	position:fixed;
 	font-size: 40px;
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	float:left;
 	width:500px;
 	height:200px;
@@ -95,7 +95,7 @@ body
 {
 	position:fixed;
 	margin-top:10%;
-	margin-left:20%;
+	margin-left:10%;
 }
 
 #myCanvas
@@ -109,37 +109,28 @@ body
 #winText1
 {
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	font-size: 32px;
 }
 
 #winText2
 {
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	font-size: 32px;
 }
 
-#controls1
-{
-	padding-top:11.5%;
-	padding-left:40%;
-	text-align: center;
-	font-family: HP Simplified;
-	font-size: 40px;
-}
-
-#controls2
+#controls
 {
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	font-size: 24px;
 }
 
 #contactForm
 {
 	position:absolute;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	text-align:center;
 	width:200px;
 	height:300px;
@@ -150,7 +141,7 @@ body
 #myEmail
 {
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	font-size: 18px;
 	position:absolute;
 	margin-left:20%;
@@ -160,7 +151,7 @@ body
 #myNumber
 {
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	font-size: 18px;
 	position:absolute;
 	margin-left:20%;
@@ -170,7 +161,7 @@ body
 #myLocation
 {
 	text-align: center;
-	font-family: HP Simplified;
+	font-family: HP Simplified, Comic Sans MS;
 	font-size: 18px;
 	position:absolute;
 	margin-left:20%;
@@ -208,4 +199,14 @@ body
 #holdVideo
 {
 	position:fixed;
+}
+
+#indexImg1
+{
+	position:absolute;
+	text-align: center;
+	font-family: HP Simplified, Comic Sans MS;
+	font-size: 18px;
+	margin-left:65%;
+	margin-top:5%;
 }

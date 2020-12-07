@@ -41,17 +41,17 @@
 			</div>
 			
 			<div id="holdCanvas">
-				<button type="button" id="pongButton" onclick="mainPong()" style="display:block"> Press to Start </button>
+				<button type="button" id="pongButton" onclick="mainPong()" style="display:block"> Press to Start/Reset </button>
 				<canvas id="myCanvas"></canvas>
 				<div id="winText1" style="display:none">Player 1 Wins!</div>
 				<div id="winText2" style="display:none">Player 2 Wins!</div>
 			</div>
-			<div id="controls1">
+			<div id="controls" style="font-size:40px;border:3px solid black;width:400px;height:300px;position:absolute;margin-left:58%;margin-top:13%;background-color:#EEDCF5;">
 				Controls
-				<p style="text-decoration:underline;">Player 1</p>
-				<div id="controls2">W + S | Left Paddle</div>
-				<p style="text-decoration:underline;">Player 2</p>
-				<div id="controls2">Up Arrow + Down Arrow | Right Paddle</div>
+				<p id="controls" style="text-decoration:underline;">Player 1</p>
+				<div id="controls">W + S | Left Paddle</div>
+				<p id="controls" style="text-decoration:underline;">Player 2</p>
+				<div id="controls">Up Arrow + Down Arrow | Right Paddle</div>
 			</div>
 		</div>
 	</body>
@@ -83,7 +83,6 @@ function player2Win() {
 // --------------------------Main function-------------------------------
 
 function mainPong() {
-	
 	var c = document.getElementById("myCanvas");
 	c.width = 400;
 	c.height = 400;
@@ -94,7 +93,6 @@ function mainPong() {
 	}
 	draw(ctx);
 	rounds++;
-
 }
 
 // --------------------------------Keydown and Keyup Events-------------------------
