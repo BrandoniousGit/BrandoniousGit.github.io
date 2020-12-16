@@ -1,7 +1,7 @@
 body
 {
 	margin:0px;
-	background-color:#BD91E3;
+	background-color:#BD91E3;            /* Basic Stuff */
 }
 
 
@@ -91,10 +91,12 @@ body
 	display:none;
 }
 
+/* ------------------------------------ */
+
 #holdCanvas
 {
 	position:fixed;
-	margin-top:10%;
+	margin-top:10%;            /* Pong Game styles */
 	margin-left:10%;
 }
 
@@ -124,8 +126,10 @@ body
 {
 	text-align: center;
 	font-family: HP Simplified, Comic Sans MS;
-	font-size: 24px;
+	font-size: 20px;
 }
+
+/* ------------------------------------ */
 
 #contactForm
 {
@@ -176,9 +180,11 @@ body
 	float:left;
 }
 
+/* ------------------------------------ */
+
 #video1
 {
-	width:35%;
+	width:35%;          /* Video Page styles */
 	height:40%;
 	border: 3px solid black;
 	margin-top:10%;
@@ -199,6 +205,7 @@ body
 #holdVideo
 {
 	position:fixed;
+	border: 3px solid white;
 }
 
 #indexImg1

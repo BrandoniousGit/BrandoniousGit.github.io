@@ -65,7 +65,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
-$(document).ready(function fadeThing(){
+$(document).ready(function fadeThing(){        //Loop that fades text in and out
 	
 	$("#Fade").fadeToggle(2000).fadeToggle(1000)
 	$("#Fade2").delay(3000).fadeToggle(2000).fadeToggle(1000)
@@ -78,7 +78,7 @@ $(document).ready(function fadeThing(){
 
 function showMenu()
 {
-	let div = document.getElementById("menu");
+	let div = document.getElementById("menu");     //Menu function
 	if (div.style.display == "" || div.style.display == "none") {
 		div.style.display = "block";
 		} 
